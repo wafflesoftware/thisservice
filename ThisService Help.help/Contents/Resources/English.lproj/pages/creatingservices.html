@@ -1,0 +1,66 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>How to create a service</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Create service" />
+<meta name="description" content="Describes how to create a service in ThisService" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionservicebasics"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>How to create a service</h1>
+</div>
+<!-- markdown begin -->
+<p><a name="createhelp"></a>Creating a service in ThisService is simple. This topic assumes you have read <a href="serviceprerequisites.html">Preparing to assemble a service</a> and tells you how to proceed.</p>
+<div summary="How to create a service" id="taskbox">
+<p><strong>To create a service:</strong></p>
+<ol>
+<li>Bring up the ThisService window and activate the <samp>Create Service</samp> tab by clicking it or by choosing <samp>File → New Service</samp>.</li>
+<li>Enter a name for the service in the <var>Name</var> text field.</li>
+<li>Choose a script by clicking the <samp>Choose…</samp> button, or by dragging the script from the Finder to the file picker field labelled <var>Script</var>.</li>
+<li>Depending on how you want your service to behave, check or uncheck <samp>Takes input</samp> and <samp>Produces output</samp>.</li>
+<li>At this point, you have filled out everything needed to create a usable service. You can also choose to set additional options by clicking <samp>Add option</samp>, or skip to the next step:
+<ul>
+<li>If you would like to provide a icon for your service, add the option <samp>Service icon</samp> and provide a Mac OS X icon file (<code>.icns</code>) or an image. For more information on creating a Mac OS X icon, see <a href="http://developer.apple.com/mac/">Apple's Developer Reference Library</a>.</li>
+<li>If you would like to limit in which application the service is available, add the option <samp>Application filter</samp> and follow the instructions to add applications.</li>
+<li>If you would like to hide your service unless input of a certain format is available, add the option <samp>Input rules</samp>. Here, you can set rules that must be fulfilled for your service to be shown. You can limit the writing system (Latin, Cyrillic, Arabic, Greek...), languages, number of words (max <em>n</em> words) and types of data (URLs, dates, addresses, email or file paths). Note that this logic is provided by Mac OS X, and that the entire input is still provided to your service script, not only the matching input.</li>
+<li>If you would like to change the service timeout from the default 30 seconds, add the option <samp>Timeout</samp> and adjust the timeout value.</li>
+<li>If you are refining your script and want to keep honing it in its current location, add the option <samp>Include script by reference</samp>. This makes the service refer to the exact script you provide, rather than copying it into the service itself. This means you can continue to edit your script in the same location and be sure your changes are picked up immediately without having to edit a different script or having to re-create the service from the changed script. However, this means that you can't share the service with anyone else, or run it from another user's account (unless she has necessary permissions to read the script file in whatever location you put it), until you <a href="sharingservices.html">pack up the service for sharing</a>.</li>
+</ul>
+</li>
+<li>Click <samp>Test Service</samp> to bring up the test sheet. <a href="testservice.html">Use the test sheet to test the service</a>.</li>
+<li>When you're finished testing, or if you don't want to test, click <samp>Finish Testing and Create Service</samp> to have ThisService create the service and install it.</li>
+</ol>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="explainingservices.html">What is a service?</a><br />
+<a href="testservice.html">Testing a service using the test sheet</a><br />
+<a href="help:topic_list=sectionservicebasics%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Service%20basics%20Topics">Service basics Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Service basics"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

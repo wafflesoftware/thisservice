@@ -1,0 +1,59 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Sharing a service</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Share, pack up" />
+<meta name="description" content="How to share a service by packing it up" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionsharingservices"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Sharing a service</h1>
+</div>
+<!-- markdown begin -->
+<p><a name="packuphelp"></a>Due to the minimal nature of services, they are perfect for solving small problems well. You may have written a useful service that you'd like to share with someone else or even with anyone else by making it available on the web.</p>
+<p>ThisService contains a feature called Pack Up that will generate a zip archive file for you containing your service. Pack Up will try to resolve as many issues as possible that would prevent people from using your service on their computers - for example, it will place a copy of your script inside the packed up service if the service currently just references the script instead of carrying its own copy of it. The Services feature in general is not very well known and it is not obvious how to install a service, so you can also supply a file with instructions.</p>
+<p>The packed up service's Resource folder will contain any file you've put in the Resources folder of the original service.</p>
+<p>ThisService is unable to verify that your service will run on other computers due to dependencies on a particular version of a language, a particular module or library or other reasons. For example, if you write a script using the Node.js JavaScript environment that's not bundled with OS X, the service will only run on other Macs that have Node.js installed and similarly configured. If your service script depends on any third-party library, please embed them within your service.</p>
+<p>Please also read <a href="sharingconsiderations.html">Considerations when sharing a service</a>.</p>
+<div summary="How to pack up a service" id="taskbox">
+<p><strong>To pack up a service:</strong></p>
+<ol>
+<li>Bring up the ThisService window and activate the <samp>Pack Up Service</samp> tab by clicking it or by choosing <samp>File → Pack Up Service</samp>.</li>
+<li>Choose the service you'd like to pack up from the <var>Service to pack up:</var> popup.</li>
+<li>If you'd like to rename your service, check the <samp>Rename:</samp> check box and edit the name in the text field.</li>
+<li>If you'd like to supply an instructions file, pick an instructions file by clicking <samp>Choose…</samp> next to <var>Optional instructions</var></li>
+<li>Click <samp>Pack Up</samp> and choose a location for the zip archive file to have ThisService create a packed up version of the service.</li>
+</ol>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="sharingconsiderations.html">Considerations when sharing a service</a><br />
+<a href="help:topic_list=sectionsharingservices%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Sharing%20services%20Topics">Sharing services Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Sharing services"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

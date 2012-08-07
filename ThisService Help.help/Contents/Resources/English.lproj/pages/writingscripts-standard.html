@@ -1,0 +1,79 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Writing a standard service script</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Standard, Ruby, Perl, Python, PHP, shell, sh, bash, csh, zsh, unix, node" />
+<meta name="description" content="The rules a standard service script must follow" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionwritingscripts"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Writing a standard service script</h1>
+</div>
+<!-- markdown begin -->
+<p>Besides AppleScript, ThisService also supports service scripts in almost any other form. These service scripts can be written in other languages like Ruby, Perl, Python and PHP, in shell scripting languages like offered by <code>bash</code>, <code>sh</code>, <code>csh</code> and <code>zsh</code> or even be plain UNIX executables. What matters is the way in which they receive and output content, which is the UNIX standard 'filter' model.</p>
+<p>To this end, this help topic will refer to them as <em>standard service scripts</em>.</p>
+<div summary="Guidelines for standard service scripts" id="taskbox">
+<p><strong>Guidelines for standard service scripts:</strong></p>
+<ul>
+<li>Standard service scripts follow a few simple rules to deal with input and output. They must receive input as-in on the STDIN channel and output on the STDOUT channel. Only services that receive input will need to pay attention to reading from STDIN, and only services that produce output will need to output to STDOUT.</li>
+<li>ThisService guarantees a few reliable conditions that you may use to simplify your service script. For more, see <a href="writingscripts-specialbehavior-standard.html">Reliable conditions for standard service scripts</a>.</li>
+<li>
+<p>All input text is given in the form of UTF-8 encoded text; UTF-8 is a text encoding that covers the entire Unicode character set. It is expected that the service script will also produce its output as UTF-8 encoded text. As UTF-8 overlaps with the most common and basic latin character encoding in use (ASCII), you may not need to pay specific attention to Unicode processing, but if you're dealing with text likely to contain Unicode characters not in the ASCII encoding or plan to distribute your service to other people, it will be useful to not have unforeseen characters trampled.</p>
+<p>ThisService ships with some best-effort starting point scripts for Perl, Ruby and Python, that are designed to not rely on any external modules. Because it is very hard to deal with Unicode text outside of PHP's de facto string encoding (ISO 8859-1) without removing them or using external modules that may not be easily redistributed, ThisService does not ship with PHP starting points.</p>
+<p>Here are some language-specific tips, along with the version installed by default with Mac OS X*:</p>
+<dl>
+<dt>Perl</dt>
+<dd>
+<p>Shipped versions: Mac OS X 10.6 ("Snow Leopard") ships with both Perl 5.10.0 (32-bit and 64-bit) and 5.8.9 and your script may run under any of these versions.</p>
+<p>What works with these shipped versions: Perl includes <a href="http://search.cpan.org/~jhi/perl-5.8.0/pod/perluniintro.pod">support for UTF-8</a> since 5.6 and recommends 5.8 or higher for "serious Unicode work".</p>
+</dd>
+<dt>Python</dt>
+<dd>
+<p>Shipped versions: Mac OS X 10.6 ("Snow Leopard") ships with Python 2.5.4 (<code>python2.5</code>) and 2.6.1 (<code>python</code>).</p>
+<p>What works with these shipped versions: These versions of Python includes some Unicode support which is poorly integrated with the input/output streams. Standard input and output are UTF-8, but Python doesn't currently translate byte data from STDIN to proper Unicode strings for you, so you'll need to use the <a href="http://docs.python.org/lib/module-codecs.html">codecs</a> module for this.</p>
+<p>What will work in the future: Python 3.0 ships with better built-in Unicode support, and Python 2.6 has the same support as an opt-in feature.</p>
+</dd>
+<dt>Ruby</dt>
+<dd>
+<p>Shipped versions: Mac OS X 10.6 ("Snow Leopard") ships with Ruby 1.8.7.</p>
+<p>What works with these shipped versions: For UTF-8 compatibility, you can mostly use <code>$KCODE = 'u'</code> at the top of the script to enable UTF-8 mode. For better Unicode support in general, various community libraries are available.</p>
+<p>What will work in the future: Ruby 1.9 has full built-in Unicode support.</p>
+</dd>
+</dl>
+<p><small>* The earliest version of Mac OS X supported by ThisService 3.0, and of the services it generates, is Mac OS X 10.6 ("Snow Leopard") and more recent versions are OS X 10.7 "Lion" and OS X 10.8 "Mountain Lion". The shipped versions of the languages above are different, and ThisService does not itself provide support to distinguish between them or to make a service only run on a later version of the operating system. ThisService 2.0 and previous versions were able to generate services running for Mac OS X 10.4 "Tiger" and Mac OS X 10.5 "Leopard".</small></p>
+</li>
+</ul>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="writingscripts-applescript.html">Writing an AppleScript service script</a><br />
+<a href="writingscripts-specialbehavior-standard.html">Reliable conditions for standard service scripts</a><br />
+<a href="help:topic_list=sectionwritingscripts%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Writing%20scripts%20Topics">Writing scripts Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Writing scripts"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

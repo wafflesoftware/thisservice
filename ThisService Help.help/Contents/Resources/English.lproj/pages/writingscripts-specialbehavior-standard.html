@@ -1,0 +1,67 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Reliable conditions for standard service scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Standard, Ruby, Perl, Python, PHP, shell, sh, bash, csh, zsh, unix, conditions" />
+<meta name="description" content="The conditions a standard service script run under" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionwritingscripts"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Reliable conditions for standard service scripts</h1>
+</div>
+<!-- markdown begin -->
+<p>ThisService executes standard-variety (non-AppleScript) service scripts under a number of special conditions that the service may choose to rely on.</p>
+<div summary="Reliable conditions for standard service scripts" id="taskbox">
+<p><strong>Reliable conditions for standard service scripts:</strong></p>
+<ul>
+<li>ThisService executes the service script with the current working directory set to the <code>Resources</code> folder of the service. This can be used to package prerequisite modules or source material for a service, in order to reliably refer to such material using a relative path.</li>
+<li>ThisService passes service input from STDIN, treats data coming out of STDOUT as service output. The service input is encoded into UTF-8, and the output of the service script is treated as UTF-8.</li>
+<li>ThisService defines a number of environment variables:
+<dl>
+<dt><code>ThisServiceMode</code></dt>
+<dd>This variable is always set to <code>YES</code>, and is meant to be used in your service script when you want to trigger a ThisService mode that relies on these conditions (for example, the unconditional use of UTF-8).</dd>
+<dt><code>ThisServiceServiceSkeletonVersion</code></dt>
+<dd>This variable is set to <code>2</code> for services created using this version of ThisService, and is intended to be used for versioning behavior when being created under different ThisService revisions. (Services created in ThisService 2.0.* or 1.* don't have this variable; 2.0.* can be detected by checking for the presence of the <code>ThisServiceMode</code> variable.) This variable is consistent with the value of the key <code>ThisServiceServiceVersion</code> in the service's Info.plist file.</dd>
+<dt><code>ThisServiceOSPlatform</code></dt>
+<dd>This variable is always set to <code>Mac OS X</code>. Alternative implementors of ThisService-like utilities on other platforms may set this to something fitting and without version numbers, like <code>Ubuntu Linux</code> or <code>iOS</code>.</dd>
+<dt><code>ThisServiceOSVersionMajorMinor</code> and <code>ThisServiceOSVersionFull</code></dt>
+<dd>These variables will be set to the current Mac OS X version in two forms; <code>ThisServiceOSVersionMajorMinor</code> contains the broad release version, like <code>10.7</code>, while <code>ThisServiceOSVersionFull</code> contains the full version, like <code>10.7.1</code>. If for any reason the version can not be determinated for one or both variables, they will be <code>?</code>. Alternative implementors of ThisService-like utilities on other platforms may set these variables to appropriate values.</dd>
+<dt><code>ThisServiceImplementor</code></dt>
+<dd>This variable is always set to <code>ThisService</code>. Alternative implementors of ThisService-like utilities on other platforms may set this to the name of the implementor. (Derivates to ThisService are encouraged to provide a different value.)</dd>
+</dl>
+</li>
+<li>ThisService changes the UNIX permissions on the service script to be <code>777</code> (universal read, write and execute access) before it attempts to run the service script, since the execution flag is needed. Since services are intended to be kept in special locations designated by the system, they are shielded by the permissions of the containing folders from actual execution by other users unless the service is computer-wide.</li>
+</ul>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="writingscripts-standard.html">Writing a standard service script</a><br />
+<a href="help:topic_list=sectionwritingscripts%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Writing%20scripts%20Topics">Writing scripts Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Writing scripts"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

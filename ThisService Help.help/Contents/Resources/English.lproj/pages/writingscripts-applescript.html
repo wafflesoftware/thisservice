@@ -1,0 +1,58 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Writing an AppleScript service script</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="AppleScript, osa" />
+<meta name="description" content="The rules an AppleScript service script must follow" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionwritingscripts"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Writing an AppleScript service script</h1>
+</div>
+<!-- markdown begin -->
+<p>AppleScript is a scripting language that's built into Mac OS X and offers some unique possibilities to control other applications that support it. ThisService supports writing service scripts in AppleScript. Apple offers help on their web site dedicated to <a href="https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html">teaching AppleScript</a> - this help topic will assume that you are already familiar with AppleScript.</p>
+<div summary="Guidelines for AppleScript service scripts" id="taskbox">
+<p><strong>Guidelines for AppleScript service scripts:</strong></p>
+<ul>
+<li>Your AppleScript has access to all the features any normal AppleScript would. You can use the full range of its functions and any installed scripting dictionary.</li>
+<li>If you have another OSA language installed, like JavaScript OSA, you can use it, too. However, this topic refers to any OSA script as an AppleScript, and uses AppleScript idioms. Also be advised that any service running an OSA script using a language other than AppleScript will require the OSA language to be installed to run.</li>
+<li>To function as a service script, your script must define a handler (a function) called <code>process</code>. In services that receive input, this handler takes one argument: the input as a Unicode text string. In services that do not take input, it doesn't take any arguments. Likewise, in services that produce output, you return the output from this handler. (In services that don't produce output, the return value is ignored.)</li>
+<li>Since the service script entry point is through the <code>process</code> handler, the service script will not start by running any code outside of the handler as a usual AppleScript would. You can use this to detect in which mode your script runs, and change its behavior accordingly.</li>
+<li>In order for the service script to run as an AppleScript rather than as a conventional script, you will need to use the file extension <samp>.scpt</samp> or <samp>.applescript</samp> (both case-insensitive) or make sure it has an HFS type code of <code>osas</code> (case-sensitive).</li>
+<li>Both compiled and source code AppleScripts are supported.</li>
+<li>If you are thinking of sharing your service with other people, please make sure any application referred to by name in the script has kept its original name in the script. For example, if you renamed your copy of iTunes to "iTunes 10", it will only run on other Macs where iTunes has been renamed "iTunes 10".</li>
+</ul>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="writingscripts-standard.html">Writing a standard service script</a><br />
+<a href="writingscripts-specialbehavior-applescript.html">Reliable conditions for AppleScript service scripts</a><br />
+<a href="help:topic_list=sectionwritingscripts%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Writing%20scripts%20Topics">Writing scripts Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Writing scripts"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240076C113CE4846001CAC53 /* emptyApp16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 240076C013CE4846001CAC53 /* emptyApp16x16.png */; };
+		240076CB13CE48C3001CAC53 /* TSStubbornImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 240076CA13CE48C3001CAC53 /* TSStubbornImageView.m */; };
+		240076DB13CF7E9A001CAC53 /* TSCheckedListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 240076DA13CF7E9A001CAC53 /* TSCheckedListDataSource.m */; };
+		240077BB13D0D55A001CAC53 /* TSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 240077BA13D0D55A001CAC53 /* TSTableView.m */; };
+		2415DAA60AF3CD1900C6ED04 /* WFFilePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415DAA50AF3CD1900C6ED04 /* WFFilePicker.m */; };
+		2415DAE10AF3D4AA00C6ED04 /* TSCreateServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415DAE00AF3D4AA00C6ED04 /* TSCreateServiceViewController.m */; };
+		2415DB8D0AF3D8FE00C6ED04 /* ServiceSkeletonMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415DB8C0AF3D8FE00C6ED04 /* ServiceSkeletonMagic.m */; };
+		2415DBA40AF3D9B400C6ED04 /* ServiceSkeleton_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415DBA30AF3D9B400C6ED04 /* ServiceSkeleton_main.m */; };
+		2415DCB50AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415DCB40AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.m */; };
+		241BADC60AF5771C006557D9 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241BADC50AF5771C006557D9 /* Carbon.framework */; };
+		2432344F15BF1B83007AEEC1 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432344E15BF1B83007AEEC1 /* CoreServices.framework */; };
+		2432345115BF1B93007AEEC1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432345015BF1B93007AEEC1 /* ApplicationServices.framework */; };
+		2432345215BF3A32007AEEC1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432344815BF16DF007AEEC1 /* CoreText.framework */; };
+		2432345515BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2432345315BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.h */; };
+		2432345615BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2432345415BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.m */; };
+		244B0E960B47F18B0056F362 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 244B0E940B47F18B0056F362 /* Credits.rtf */; };
+		244EB8D813DE039700E41B70 /* TSDelegatingDropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 244EB8D713DE039700E41B70 /* TSDelegatingDropZoneView.m */; };
+		24519C4415A5D37D005FB2D6 /* TSServiceTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 24519C4315A5D37D005FB2D6 /* TSServiceTester.m */; };
+		24519C4615A5D40B005FB2D6 /* TSServiceTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BEE19515A4FAD00073AAE0 /* TSServiceTesting.h */; };
+		24519C4815A5DD04005FB2D6 /* emptyApp16x16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24519C4715A5DD04005FB2D6 /* emptyApp16x16@2x.png */; };
+		24519C4E15A5E103005FB2D6 /* TSServiceTestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24519C4C15A5E103005FB2D6 /* TSServiceTestWindowController.m */; };
+		2457232815AB79F800C7233A /* TSExtraCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2457232615AB79F800C7233A /* TSExtraCollectionView.m */; };
+		2468559813CB5897003312AA /* TSWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2468559713CB5897003312AA /* TSWindowController.m */; };
+		2468559D13CB5D85003312AA /* TSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2468559C13CB5D85003312AA /* TSViewController.m */; };
+		2468A3BA0B570A96009C2B16 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		2468E8930C8B560C00BD1D0C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468E8920C8B560C00BD1D0C /* Sparkle.framework */; };
+		2468E8B50C8B564D00BD1D0C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2468E8920C8B560C00BD1D0C /* Sparkle.framework */; };
+		2472535013C8E264009667AE /* TSCreateServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2472534E13C8E264009667AE /* TSCreateServiceViewController.xib */; };
+		2474E4AE15AF81A800A6EABB /* WFMachTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2474E4AC15AF81A800A6EABB /* WFMachTime.m */; };
+		247CC8530C63B23E007B67A8 /* TSModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CC8520C63B23E007B67A8 /* TSModeCell.m */; };
+		247CCC0E0C63EE24007B67A8 /* TSModeMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CCC0D0C63EE24007B67A8 /* TSModeMatrix.m */; };
+		2485B8450BDBFE1A0051E70B /* TSPackUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485B8440BDBFE1A0051E70B /* TSPackUpViewController.m */; };
+		2485BB880BDD63CE0051E70B /* TSZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485BB870BDD63CE0051E70B /* TSZip.m */; };
+		248B5CC213D7793B00568686 /* TSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 248B5CC113D7793B00568686 /* TSService.m */; };
+		248BFA9E13D3903900D824F3 /* TSServiceInputRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 248BFA9D13D3903900D824F3 /* TSServiceInputRules.m */; };
+		248BFAA113D3929800D824F3 /* TSServiceInputRulesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248BFAA013D3929800D824F3 /* TSServiceInputRulesWindowController.m */; };
+		248BFAA413D394A900D824F3 /* TSServiceInputRulesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248BFAA213D394A900D824F3 /* TSServiceInputRulesWindowController.xib */; };
+		248F90A715D1B6FE000A64B2 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 248F90A615D1B6FE000A64B2 /* dsa_pub.pem */; };
+		2495967D13CCF91600E73F99 /* TSPackUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2495967B13CCF91600E73F99 /* TSPackUpViewController.xib */; };
+		24BDC6DB0B1F3A2D00FCEB24 /* OpaqueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BDC6DA0B1F3A2D00FCEB24 /* OpaqueView.m */; };
+		24BEE19715A4FEB70073AAE0 /* TSServiceTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BEE19515A4FAD00073AAE0 /* TSServiceTesting.h */; };
+		24CAF63B1599114D009F5ACB /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF63A1599114D009F5ACB /* SRCommon.m */; };
+		24CF53D015A0C4420018F8D1 /* TSServiceAppFilterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24CF53CE15A0C4420018F8D1 /* TSServiceAppFilterWindowController.xib */; };
+		24CF53D315A0C5C90018F8D1 /* TSServiceAppFilterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF53D215A0C5C90018F8D1 /* TSServiceAppFilterWindowController.m */; };
+		24CF53D615A0C7240018F8D1 /* TSServiceAppFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF53D515A0C7240018F8D1 /* TSServiceAppFilter.m */; };
+		24CF53D915A0D0850018F8D1 /* NSWorkspace+SmallIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF53D815A0D0850018F8D1 /* NSWorkspace+SmallIcon.m */; };
+		24E7D7F615CF1E6400815D97 /* TSServiceTestWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E7D7F415CF1E6400815D97 /* TSServiceTestWindowController.xib */; };
+		24E8A0E20C5E762A00573A61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24E8A0E10C5E762A00573A61 /* Localizable.strings */; };
+		24ED01C015BDCFD800370C15 /* hidpiicon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 24ED01BF15BDCFD800370C15 /* hidpiicon.iconset */; };
+		24ED01C715BDDA7400370C15 /* TSLineBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED01C515BDDA7400370C15 /* TSLineBox.m */; };
+		24EFD8DB13D64AD6003D1F04 /* IconFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EFD8DA13D64AD6003D1F04 /* IconFamily.m */; };
+		24EFD8E713D64BC4003D1F04 /* NSString+CarbonFSRefCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EFD8E613D64BC4003D1F04 /* NSString+CarbonFSRefCreation.m */; };
+		24F36C150B56AD96005F9F49 /* NDResourceFork.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C090B56AD96005F9F49 /* NDResourceFork.m */; };
+		24F36C160B56AD96005F9F49 /* NDResourceFork+OtherSorces.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0B0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m */; };
+		24F36C170B56AD96005F9F49 /* NSString+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m */; };
+		24F36C180B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0F0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m */; };
+		24F36C190B56AD96005F9F49 /* NDAlias.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C120B56AD96005F9F49 /* NDAlias.m */; };
+		24F36C1A0B56AD96005F9F49 /* NDAlias+AliasFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C140B56AD96005F9F49 /* NDAlias+AliasFile.m */; };
+		24F36C1B0B56AD96005F9F49 /* NDResourceFork.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C090B56AD96005F9F49 /* NDResourceFork.m */; };
+		24F36C1C0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0B0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m */; };
+		24F36C1D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m */; };
+		24F36C1E0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C0F0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m */; };
+		24F36C1F0B56AD96005F9F49 /* NDAlias.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C120B56AD96005F9F49 /* NDAlias.m */; };
+		24F36C200B56AD96005F9F49 /* NDAlias+AliasFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F36C140B56AD96005F9F49 /* NDAlias+AliasFile.m */; };
+		24FC889715C2128000F03A6A /* ThisService Help.help in Resources */ = {isa = PBXBuildFile; fileRef = 24FC889615C2128000F03A6A /* ThisService Help.help */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2415DDC00AF41CF800C6ED04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2415DB540AF3D7A400C6ED04;
+			remoteInfo = ServiceSkeleton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2468E8AA0C8B561E00BD1D0C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2468E8B50C8B564D00BD1D0C /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		240076C013CE4846001CAC53 /* emptyApp16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyApp16x16.png; sourceTree = "<group>"; };
+		240076C913CE48C3001CAC53 /* TSStubbornImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSStubbornImageView.h; sourceTree = "<group>"; };
+		240076CA13CE48C3001CAC53 /* TSStubbornImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSStubbornImageView.m; sourceTree = "<group>"; };
+		240076D913CF7E9A001CAC53 /* TSCheckedListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCheckedListDataSource.h; sourceTree = "<group>"; };
+		240076DA13CF7E9A001CAC53 /* TSCheckedListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCheckedListDataSource.m; sourceTree = "<group>"; };
+		240077B913D0D55A001CAC53 /* TSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTableView.h; sourceTree = "<group>"; };
+		240077BA13D0D55A001CAC53 /* TSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTableView.m; sourceTree = "<group>"; };
+		2415DAA40AF3CD1900C6ED04 /* WFFilePicker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WFFilePicker.h; sourceTree = "<group>"; };
+		2415DAA50AF3CD1900C6ED04 /* WFFilePicker.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WFFilePicker.m; sourceTree = "<group>"; };
+		2415DADF0AF3D4AA00C6ED04 /* TSCreateServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCreateServiceViewController.h; sourceTree = "<group>"; };
+		2415DAE00AF3D4AA00C6ED04 /* TSCreateServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCreateServiceViewController.m; sourceTree = "<group>"; };
+		2415DB550AF3D7A400C6ED04 /* ServiceSkeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceSkeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2415DB570AF3D7A400C6ED04 /* ServiceSkeleton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ServiceSkeleton-Info.plist"; sourceTree = "<group>"; };
+		2415DB8C0AF3D8FE00C6ED04 /* ServiceSkeletonMagic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceSkeletonMagic.m; path = ServiceSkeleton/ServiceSkeletonMagic.m; sourceTree = "<group>"; };
+		2415DBA30AF3D9B400C6ED04 /* ServiceSkeleton_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceSkeleton_main.m; path = ServiceSkeleton/ServiceSkeleton_main.m; sourceTree = "<group>"; };
+		2415DBA90AF3D9EA00C6ED04 /* ServiceSkeletonMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceSkeletonMagic.h; path = ServiceSkeleton/ServiceSkeletonMagic.h; sourceTree = "<group>"; };
+		2415DCB30AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSAppleScript+HandlerCalls.h"; path = "ServiceSkeleton/NSAppleScript+HandlerCalls.h"; sourceTree = "<group>"; };
+		2415DCB40AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSAppleScript+HandlerCalls.m"; path = "ServiceSkeleton/NSAppleScript+HandlerCalls.m"; sourceTree = "<group>"; };
+		241BADC50AF5771C006557D9 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		2432344815BF16DF007AEEC1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2432344E15BF1B83007AEEC1 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		2432345015BF1B93007AEEC1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		2432345315BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+AttributedStringExtensions.h"; sourceTree = "<group>"; };
+		2432345415BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+AttributedStringExtensions.m"; sourceTree = "<group>"; };
+		244B0E950B47F18B0056F362 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		244EB8D613DE039700E41B70 /* TSDelegatingDropZoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDelegatingDropZoneView.h; sourceTree = "<group>"; };
+		244EB8D713DE039700E41B70 /* TSDelegatingDropZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDelegatingDropZoneView.m; sourceTree = "<group>"; };
+		24519C4215A5D37D005FB2D6 /* TSServiceTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceTester.h; sourceTree = "<group>"; };
+		24519C4315A5D37D005FB2D6 /* TSServiceTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceTester.m; sourceTree = "<group>"; };
+		24519C4715A5DD04005FB2D6 /* emptyApp16x16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emptyApp16x16@2x.png"; sourceTree = "<group>"; };
+		24519C4B15A5E103005FB2D6 /* TSServiceTestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceTestWindowController.h; sourceTree = "<group>"; };
+		24519C4C15A5E103005FB2D6 /* TSServiceTestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceTestWindowController.m; sourceTree = "<group>"; };
+		2457232515AB79F800C7233A /* TSExtraCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSExtraCollectionView.h; sourceTree = "<group>"; };
+		2457232615AB79F800C7233A /* TSExtraCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExtraCollectionView.m; sourceTree = "<group>"; };
+		2468559613CB5897003312AA /* TSWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSWindowController.h; sourceTree = "<group>"; };
+		2468559713CB5897003312AA /* TSWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSWindowController.m; sourceTree = "<group>"; };
+		2468559B13CB5D85003312AA /* TSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSViewController.h; sourceTree = "<group>"; };
+		2468559C13CB5D85003312AA /* TSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSViewController.m; sourceTree = "<group>"; };
+		2468E8920C8B560C00BD1D0C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		2472534F13C8E264009667AE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TSCreateServiceViewController.xib; sourceTree = "<group>"; };
+		2474E4AB15AF81A800A6EABB /* WFMachTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFMachTime.h; sourceTree = "<group>"; };
+		2474E4AC15AF81A800A6EABB /* WFMachTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFMachTime.m; sourceTree = "<group>"; };
+		247CC8510C63B23E007B67A8 /* TSModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSModeCell.h; sourceTree = "<group>"; };
+		247CC8520C63B23E007B67A8 /* TSModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSModeCell.m; sourceTree = "<group>"; };
+		247CCC0C0C63EE24007B67A8 /* TSModeMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSModeMatrix.h; sourceTree = "<group>"; };
+		247CCC0D0C63EE24007B67A8 /* TSModeMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSModeMatrix.m; sourceTree = "<group>"; };
+		2485B8430BDBFE1A0051E70B /* TSPackUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TSPackUpViewController.h; sourceTree = "<group>"; };
+		2485B8440BDBFE1A0051E70B /* TSPackUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPackUpViewController.m; sourceTree = "<group>"; };
+		2485BB860BDD63CE0051E70B /* TSZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZip.h; sourceTree = "<group>"; };
+		2485BB870BDD63CE0051E70B /* TSZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZip.m; sourceTree = "<group>"; };
+		248B5CC013D7793B00568686 /* TSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSService.h; sourceTree = "<group>"; };
+		248B5CC113D7793B00568686 /* TSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSService.m; sourceTree = "<group>"; };
+		248BFA9C13D3903900D824F3 /* TSServiceInputRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceInputRules.h; sourceTree = "<group>"; };
+		248BFA9D13D3903900D824F3 /* TSServiceInputRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceInputRules.m; sourceTree = "<group>"; };
+		248BFA9F13D3929800D824F3 /* TSServiceInputRulesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceInputRulesWindowController.h; sourceTree = "<group>"; };
+		248BFAA013D3929800D824F3 /* TSServiceInputRulesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceInputRulesWindowController.m; sourceTree = "<group>"; };
+		248BFAA313D394A900D824F3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TSServiceInputRulesWindowController.xib; sourceTree = "<group>"; };
+		248F90A615D1B6FE000A64B2 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		249138F113C647790073FE2A /* NDSDKCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDSDKCompatibility.h; sourceTree = "<group>"; };
+		2495967C13CCF91600E73F99 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TSPackUpViewController.xib; sourceTree = "<group>"; };
+		24BDC6D90B1F3A2D00FCEB24 /* OpaqueView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = OpaqueView.h; sourceTree = "<group>"; };
+		24BDC6DA0B1F3A2D00FCEB24 /* OpaqueView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = OpaqueView.m; sourceTree = "<group>"; };
+		24BEE19515A4FAD00073AAE0 /* TSServiceTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceTesting.h; sourceTree = "<group>"; };
+		24CAF6391599114D009F5ACB /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRCommon.h; path = ShortcutRecorder/SRCommon.h; sourceTree = "<group>"; };
+		24CAF63A1599114D009F5ACB /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCommon.m; path = ShortcutRecorder/SRCommon.m; sourceTree = "<group>"; };
+		24CF53CF15A0C4420018F8D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TSServiceAppFilterWindowController.xib; sourceTree = "<group>"; };
+		24CF53D115A0C5C90018F8D1 /* TSServiceAppFilterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceAppFilterWindowController.h; sourceTree = "<group>"; };
+		24CF53D215A0C5C90018F8D1 /* TSServiceAppFilterWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceAppFilterWindowController.m; sourceTree = "<group>"; };
+		24CF53D415A0C7240018F8D1 /* TSServiceAppFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSServiceAppFilter.h; sourceTree = "<group>"; };
+		24CF53D515A0C7240018F8D1 /* TSServiceAppFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSServiceAppFilter.m; sourceTree = "<group>"; };
+		24CF53D715A0D0850018F8D1 /* NSWorkspace+SmallIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+SmallIcon.h"; sourceTree = "<group>"; };
+		24CF53D815A0D0850018F8D1 /* NSWorkspace+SmallIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace+SmallIcon.m"; sourceTree = "<group>"; };
+		24E7C5BD0B6C029400F8EE98 /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MainMenu.nib; path = ServiceSkeleton/MainMenu.nib; sourceTree = "<group>"; };
+		24E7D7EB15CF10CA00815D97 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		24E7D7F515CF1E6400815D97 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TSServiceTestWindowController.xib; sourceTree = "<group>"; };
+		24E8A0DB0C5E75C900573A61 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		24ED01BF15BDCFD800370C15 /* hidpiicon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = hidpiicon.iconset; sourceTree = "<group>"; };
+		24ED01C415BDDA7400370C15 /* TSLineBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLineBox.h; sourceTree = "<group>"; };
+		24ED01C515BDDA7400370C15 /* TSLineBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLineBox.m; sourceTree = "<group>"; };
+		24EFD8D913D64AD5003D1F04 /* IconFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconFamily.h; sourceTree = "<group>"; };
+		24EFD8DA13D64AD6003D1F04 /* IconFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconFamily.m; sourceTree = "<group>"; };
+		24EFD8E513D64BC4003D1F04 /* NSString+CarbonFSRefCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CarbonFSRefCreation.h"; sourceTree = "<group>"; };
+		24EFD8E613D64BC4003D1F04 /* NSString+CarbonFSRefCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CarbonFSRefCreation.m"; sourceTree = "<group>"; };
+		24F36C090B56AD96005F9F49 /* NDResourceFork.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NDResourceFork.m; sourceTree = "<group>"; };
+		24F36C0A0B56AD96005F9F49 /* NDResourceFork+OtherSorces.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NDResourceFork+OtherSorces.h"; sourceTree = "<group>"; };
+		24F36C0B0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NDResourceFork+OtherSorces.m"; sourceTree = "<group>"; };
+		24F36C0C0B56AD96005F9F49 /* NSString+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSString+NDCarbonUtilities.h"; sourceTree = "<group>"; };
+		24F36C0D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSString+NDCarbonUtilities.m"; sourceTree = "<group>"; };
+		24F36C0E0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
+		24F36C0F0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
+		24F36C100B56AD96005F9F49 /* NDResourceFork.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NDResourceFork.h; sourceTree = "<group>"; };
+		24F36C110B56AD96005F9F49 /* NDAlias.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NDAlias.h; sourceTree = "<group>"; };
+		24F36C120B56AD96005F9F49 /* NDAlias.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NDAlias.m; sourceTree = "<group>"; };
+		24F36C130B56AD96005F9F49 /* NDAlias+AliasFile.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NDAlias+AliasFile.h"; sourceTree = "<group>"; };
+		24F36C140B56AD96005F9F49 /* NDAlias+AliasFile.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NDAlias+AliasFile.m"; sourceTree = "<group>"; };
+		24FC889615C2128000F03A6A /* ThisService Help.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "ThisService Help.help"; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* ThisService_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThisService_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* ThisService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThisService.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2415DB530AF3D7A400C6ED04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2468A3BA0B570A96009C2B16 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2432345215BF3A32007AEEC1 /* CoreText.framework in Frameworks */,
+				2432345115BF1B93007AEEC1 /* ApplicationServices.framework in Frameworks */,
+				2432344F15BF1B83007AEEC1 /* CoreServices.framework in Frameworks */,
+				241BADC60AF5771C006557D9 /* Carbon.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				2468E8930C8B560C00BD1D0C /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24EFD8DD13D64AD9003D1F04 /* IconFamily */,
+				24F36BFC0B56AD7C005F9F49 /* NDAlias */,
+				2485B8430BDBFE1A0051E70B /* TSPackUpViewController.h */,
+				2485B8440BDBFE1A0051E70B /* TSPackUpViewController.m */,
+				24CAF6391599114D009F5ACB /* SRCommon.h */,
+				24CAF63A1599114D009F5ACB /* SRCommon.m */,
+				2415DADF0AF3D4AA00C6ED04 /* TSCreateServiceViewController.h */,
+				2415DAE00AF3D4AA00C6ED04 /* TSCreateServiceViewController.m */,
+				248BFA9F13D3929800D824F3 /* TSServiceInputRulesWindowController.h */,
+				248BFAA013D3929800D824F3 /* TSServiceInputRulesWindowController.m */,
+				2415DAA40AF3CD1900C6ED04 /* WFFilePicker.h */,
+				2415DAA50AF3CD1900C6ED04 /* WFFilePicker.m */,
+				24BDC6D90B1F3A2D00FCEB24 /* OpaqueView.h */,
+				24BDC6DA0B1F3A2D00FCEB24 /* OpaqueView.m */,
+				2474E4AB15AF81A800A6EABB /* WFMachTime.h */,
+				2474E4AC15AF81A800A6EABB /* WFMachTime.m */,
+				2485BB860BDD63CE0051E70B /* TSZip.h */,
+				2485BB870BDD63CE0051E70B /* TSZip.m */,
+				247CC8510C63B23E007B67A8 /* TSModeCell.h */,
+				247CC8520C63B23E007B67A8 /* TSModeCell.m */,
+				247CCC0C0C63EE24007B67A8 /* TSModeMatrix.h */,
+				247CCC0D0C63EE24007B67A8 /* TSModeMatrix.m */,
+				2468559613CB5897003312AA /* TSWindowController.h */,
+				2468559713CB5897003312AA /* TSWindowController.m */,
+				2468559B13CB5D85003312AA /* TSViewController.h */,
+				2468559C13CB5D85003312AA /* TSViewController.m */,
+				240076C913CE48C3001CAC53 /* TSStubbornImageView.h */,
+				240076CA13CE48C3001CAC53 /* TSStubbornImageView.m */,
+				240076D913CF7E9A001CAC53 /* TSCheckedListDataSource.h */,
+				240076DA13CF7E9A001CAC53 /* TSCheckedListDataSource.m */,
+				240077B913D0D55A001CAC53 /* TSTableView.h */,
+				240077BA13D0D55A001CAC53 /* TSTableView.m */,
+				248BFA9C13D3903900D824F3 /* TSServiceInputRules.h */,
+				248BFA9D13D3903900D824F3 /* TSServiceInputRules.m */,
+				248B5CC013D7793B00568686 /* TSService.h */,
+				248B5CC113D7793B00568686 /* TSService.m */,
+				244EB8D613DE039700E41B70 /* TSDelegatingDropZoneView.h */,
+				244EB8D713DE039700E41B70 /* TSDelegatingDropZoneView.m */,
+				24CF53D115A0C5C90018F8D1 /* TSServiceAppFilterWindowController.h */,
+				24CF53D215A0C5C90018F8D1 /* TSServiceAppFilterWindowController.m */,
+				24CF53D415A0C7240018F8D1 /* TSServiceAppFilter.h */,
+				24CF53D515A0C7240018F8D1 /* TSServiceAppFilter.m */,
+				24CF53D715A0D0850018F8D1 /* NSWorkspace+SmallIcon.h */,
+				24CF53D815A0D0850018F8D1 /* NSWorkspace+SmallIcon.m */,
+				24519C4B15A5E103005FB2D6 /* TSServiceTestWindowController.h */,
+				24519C4C15A5E103005FB2D6 /* TSServiceTestWindowController.m */,
+				24519C4215A5D37D005FB2D6 /* TSServiceTester.h */,
+				24519C4315A5D37D005FB2D6 /* TSServiceTester.m */,
+				2457232515AB79F800C7233A /* TSExtraCollectionView.h */,
+				2457232615AB79F800C7233A /* TSExtraCollectionView.m */,
+				24ED01C415BDDA7400370C15 /* TSLineBox.h */,
+				24ED01C515BDDA7400370C15 /* TSLineBox.m */,
+				2432345315BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.h */,
+				2432345415BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* ThisService.app */,
+				2415DB550AF3D7A400C6ED04 /* ServiceSkeleton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2415DB690AF3D82D00C6ED04 /* ServiceSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				2415DCB30AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.h */,
+				2415DCB40AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.m */,
+				2415DBA30AF3D9B400C6ED04 /* ServiceSkeleton_main.m */,
+				2415DB570AF3D7A400C6ED04 /* ServiceSkeleton-Info.plist */,
+				2415DBA90AF3D9EA00C6ED04 /* ServiceSkeletonMagic.h */,
+				2415DB8C0AF3D8FE00C6ED04 /* ServiceSkeletonMagic.m */,
+			);
+			name = ServiceSkeleton;
+			sourceTree = "<group>";
+		};
+		244671150C84BE1A00FD4DF1 /* Service Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				24E7C5BD0B6C029400F8EE98 /* MainMenu.nib */,
+			);
+			name = "Service Skeleton";
+			sourceTree = "<group>";
+		};
+		24EFD8DD13D64AD9003D1F04 /* IconFamily */ = {
+			isa = PBXGroup;
+			children = (
+				24EFD8E513D64BC4003D1F04 /* NSString+CarbonFSRefCreation.h */,
+				24EFD8E613D64BC4003D1F04 /* NSString+CarbonFSRefCreation.m */,
+				24EFD8D913D64AD5003D1F04 /* IconFamily.h */,
+				24EFD8DA13D64AD6003D1F04 /* IconFamily.m */,
+			);
+			name = IconFamily;
+			sourceTree = "<group>";
+		};
+		24F36BFC0B56AD7C005F9F49 /* NDAlias */ = {
+			isa = PBXGroup;
+			children = (
+				249138F113C647790073FE2A /* NDSDKCompatibility.h */,
+				24F36C090B56AD96005F9F49 /* NDResourceFork.m */,
+				24F36C0A0B56AD96005F9F49 /* NDResourceFork+OtherSorces.h */,
+				24F36C0B0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m */,
+				24F36C0C0B56AD96005F9F49 /* NSString+NDCarbonUtilities.h */,
+				24F36C0D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m */,
+				24F36C0E0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.h */,
+				24F36C0F0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m */,
+				24F36C100B56AD96005F9F49 /* NDResourceFork.h */,
+				24F36C110B56AD96005F9F49 /* NDAlias.h */,
+				24F36C120B56AD96005F9F49 /* NDAlias.m */,
+				24F36C130B56AD96005F9F49 /* NDAlias+AliasFile.h */,
+				24F36C140B56AD96005F9F49 /* NDAlias+AliasFile.m */,
+			);
+			name = NDAlias;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* ThisService */ = {
+			isa = PBXGroup;
+			children = (
+				24E7D7EB15CF10CA00815D97 /* license.txt */,
+				24BEE19515A4FAD00073AAE0 /* TSServiceTesting.h */,
+				2415DB690AF3D82D00C6ED04 /* ServiceSkeleton */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = ThisService;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* ThisService_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				248F90A615D1B6FE000A64B2 /* dsa_pub.pem */,
+				24ED01BF15BDCFD800370C15 /* hidpiicon.iconset */,
+				240076C013CE4846001CAC53 /* emptyApp16x16.png */,
+				24519C4715A5DD04005FB2D6 /* emptyApp16x16@2x.png */,
+				24E7D7F415CF1E6400815D97 /* TSServiceTestWindowController.xib */,
+				248BFAA213D394A900D824F3 /* TSServiceInputRulesWindowController.xib */,
+				2495967B13CCF91600E73F99 /* TSPackUpViewController.xib */,
+				24CF53CE15A0C4420018F8D1 /* TSServiceAppFilterWindowController.xib */,
+				2472534E13C8E264009667AE /* TSCreateServiceViewController.xib */,
+				24FC889615C2128000F03A6A /* ThisService Help.help */,
+				244B0E940B47F18B0056F362 /* Credits.rtf */,
+				24E8A0E10C5E762A00573A61 /* Localizable.strings */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				244671150C84BE1A00FD4DF1 /* Service Skeleton */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2432345015BF1B93007AEEC1 /* ApplicationServices.framework */,
+				2432344E15BF1B83007AEEC1 /* CoreServices.framework */,
+				2432344815BF16DF007AEEC1 /* CoreText.framework */,
+				241BADC50AF5771C006557D9 /* Carbon.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				2468E8920C8B560C00BD1D0C /* Sparkle.framework */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24519C4515A5D401005FB2D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24519C4615A5D40B005FB2D6 /* TSServiceTesting.h in Headers */,
+				2432345515BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24BEE19615A4FEAB0073AAE0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24BEE19715A4FEB70073AAE0 /* TSServiceTesting.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2415DB540AF3D7A400C6ED04 /* ServiceSkeleton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2415DB580AF3D7A500C6ED04 /* Build configuration list for PBXNativeTarget "ServiceSkeleton" */;
+			buildPhases = (
+				2415DB520AF3D7A400C6ED04 /* Sources */,
+				2415DB530AF3D7A400C6ED04 /* Frameworks */,
+				24BEE19615A4FEAB0073AAE0 /* Headers */,
+				24F36D310B56FA3F005F9F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServiceSkeleton;
+			productName = ServiceSkeleton;
+			productReference = 2415DB550AF3D7A400C6ED04 /* ServiceSkeleton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D1107260486CEB800E47090 /* ThisService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ThisService" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				24519C4515A5D401005FB2D6 /* Headers */,
+				24BA40650AF50BD2008ACB1F /* ShellScript */,
+				2468E8AA0C8B561E00BD1D0C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2415DDC10AF41CF800C6ED04 /* PBXTargetDependency */,
+			);
+			name = ThisService;
+			productInstallPath = "$(HOME)/Applications";
+			productName = ThisService;
+			productReference = 8D1107320486CEB800E47090 /* ThisService.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ThisService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				fr,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* ThisService */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* ThisService */,
+				2415DB540AF3D7A400C6ED04 /* ServiceSkeleton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24F36D310B56FA3F005F9F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				244B0E960B47F18B0056F362 /* Credits.rtf in Resources */,
+				24E8A0E20C5E762A00573A61 /* Localizable.strings in Resources */,
+				2472535013C8E264009667AE /* TSCreateServiceViewController.xib in Resources */,
+				2495967D13CCF91600E73F99 /* TSPackUpViewController.xib in Resources */,
+				240076C113CE4846001CAC53 /* emptyApp16x16.png in Resources */,
+				248BFAA413D394A900D824F3 /* TSServiceInputRulesWindowController.xib in Resources */,
+				24CF53D015A0C4420018F8D1 /* TSServiceAppFilterWindowController.xib in Resources */,
+				24519C4815A5DD04005FB2D6 /* emptyApp16x16@2x.png in Resources */,
+				24ED01C015BDCFD800370C15 /* hidpiicon.iconset in Resources */,
+				24FC889715C2128000F03A6A /* ThisService Help.help in Resources */,
+				24E7D7F615CF1E6400815D97 /* TSServiceTestWindowController.xib in Resources */,
+				248F90A715D1B6FE000A64B2 /* dsa_pub.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24BA40650AF50BD2008ACB1F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"$BUILT_PRODUCTS_DIR/ServiceSkeleton.app/Contents/MacOS/ServiceSkeleton\" \"$BUILT_PRODUCTS_DIR/ThisService.app/Contents/Resources/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2415DB520AF3D7A400C6ED04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2415DBA40AF3D9B400C6ED04 /* ServiceSkeleton_main.m in Sources */,
+				2415DB8D0AF3D8FE00C6ED04 /* ServiceSkeletonMagic.m in Sources */,
+				2415DCB50AF40C4C00C6ED04 /* NSAppleScript+HandlerCalls.m in Sources */,
+				24F36C1B0B56AD96005F9F49 /* NDResourceFork.m in Sources */,
+				24F36C1C0B56AD96005F9F49 /* NDResourceFork+OtherSorces.m in Sources */,
+				24F36C1D0B56AD96005F9F49 /* NSString+NDCarbonUtilities.m in Sources */,
+				24F36C1E0B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m in Sources */,
+				24F36C1F0B56AD96005F9F49 /* NDAlias.m in Sources */,
+				24F36C200B56AD96005F9F49 /* NDAlias+AliasFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				2415DAA60AF3CD1900C6ED04 /* WFFilePicker.m in Sources */,
+				2415DAE10AF3D4AA00C6ED04 /* TSCreateServiceViewController.m in Sources */,
+				24BDC6DB0B1F3A2D00FCEB24 /* OpaqueView.m in Sources */,
+				24F36C150B56AD96005F9F49 /* NDResourceFork.m in Sources */,
+				24F36C160B56AD96005F9F49 /* NDResourceFork+OtherSorces.m in Sources */,
+				24F36C170B56AD96005F9F49 /* NSString+NDCarbonUtilities.m in Sources */,
+				24F36C180B56AD96005F9F49 /* NSURL+NDCarbonUtilities.m in Sources */,
+				24F36C190B56AD96005F9F49 /* NDAlias.m in Sources */,
+				24F36C1A0B56AD96005F9F49 /* NDAlias+AliasFile.m in Sources */,
+				2485B8450BDBFE1A0051E70B /* TSPackUpViewController.m in Sources */,
+				2485BB880BDD63CE0051E70B /* TSZip.m in Sources */,
+				247CC8530C63B23E007B67A8 /* TSModeCell.m in Sources */,
+				247CCC0E0C63EE24007B67A8 /* TSModeMatrix.m in Sources */,
+				2468559813CB5897003312AA /* TSWindowController.m in Sources */,
+				2468559D13CB5D85003312AA /* TSViewController.m in Sources */,
+				240076CB13CE48C3001CAC53 /* TSStubbornImageView.m in Sources */,
+				240076DB13CF7E9A001CAC53 /* TSCheckedListDataSource.m in Sources */,
+				240077BB13D0D55A001CAC53 /* TSTableView.m in Sources */,
+				248BFA9E13D3903900D824F3 /* TSServiceInputRules.m in Sources */,
+				248BFAA113D3929800D824F3 /* TSServiceInputRulesWindowController.m in Sources */,
+				24EFD8DB13D64AD6003D1F04 /* IconFamily.m in Sources */,
+				24EFD8E713D64BC4003D1F04 /* NSString+CarbonFSRefCreation.m in Sources */,
+				248B5CC213D7793B00568686 /* TSService.m in Sources */,
+				244EB8D813DE039700E41B70 /* TSDelegatingDropZoneView.m in Sources */,
+				24CAF63B1599114D009F5ACB /* SRCommon.m in Sources */,
+				24CF53D315A0C5C90018F8D1 /* TSServiceAppFilterWindowController.m in Sources */,
+				24CF53D615A0C7240018F8D1 /* TSServiceAppFilter.m in Sources */,
+				24CF53D915A0D0850018F8D1 /* NSWorkspace+SmallIcon.m in Sources */,
+				24519C4415A5D37D005FB2D6 /* TSServiceTester.m in Sources */,
+				24519C4E15A5E103005FB2D6 /* TSServiceTestWindowController.m in Sources */,
+				2457232815AB79F800C7233A /* TSExtraCollectionView.m in Sources */,
+				2474E4AE15AF81A800A6EABB /* WFMachTime.m in Sources */,
+				24ED01C715BDDA7400370C15 /* TSLineBox.m in Sources */,
+				2432345615BF3A40007AEEC1 /* NSBezierPath+AttributedStringExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2415DDC10AF41CF800C6ED04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2415DB540AF3D7A400C6ED04 /* ServiceSkeleton */;
+			targetProxy = 2415DDC00AF41CF800C6ED04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		244B0E940B47F18B0056F362 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				244B0E950B47F18B0056F362 /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2472534E13C8E264009667AE /* TSCreateServiceViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2472534F13C8E264009667AE /* English */,
+			);
+			name = TSCreateServiceViewController.xib;
+			sourceTree = "<group>";
+		};
+		248BFAA213D394A900D824F3 /* TSServiceInputRulesWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				248BFAA313D394A900D824F3 /* English */,
+			);
+			name = TSServiceInputRulesWindowController.xib;
+			sourceTree = "<group>";
+		};
+		2495967B13CCF91600E73F99 /* TSPackUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2495967C13CCF91600E73F99 /* English */,
+			);
+			name = TSPackUpViewController.xib;
+			sourceTree = "<group>";
+		};
+		24CF53CE15A0C4420018F8D1 /* TSServiceAppFilterWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24CF53CF15A0C4420018F8D1 /* English */,
+			);
+			name = TSServiceAppFilterWindowController.xib;
+			sourceTree = "<group>";
+		};
+		24E7D7F415CF1E6400815D97 /* TSServiceTestWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E7D7F515CF1E6400815D97 /* English */,
+			);
+			name = TSServiceTestWindowController.xib;
+			sourceTree = "<group>";
+		};
+		24E8A0E10C5E762A00573A61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E8A0DB0C5E75C900573A61 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2415DB590AF3D7A500C6ED04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "ServiceSkeleton-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = ServiceSkeleton;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2415DB5A0AF3D7A500C6ED04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "ServiceSkeleton-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = ServiceSkeleton;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "waffle software Code Signing";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = ThisService;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "waffle software Code Signing";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = ThisService;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2415DB580AF3D7A500C6ED04 /* Build configuration list for PBXNativeTarget "ServiceSkeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2415DB590AF3D7A500C6ED04 /* Debug */,
+				2415DB5A0AF3D7A500C6ED04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ThisService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ThisService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

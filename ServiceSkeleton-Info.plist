@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.wafflesoftware.ThisService.ServiceSkeleton</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSBGOnly</key>
+	<string>1</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>ServiceSkeletonPortName</key>
+	<string>Debug</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Test Magic Service</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>doServiceWork</string>
+			<key>NSPortName</key>
+			<string>ServiceSkeletonMagic</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSUserData</key>
+			<string>foo.scpt</string>
+		</dict>
+	</array>
+	
+</dict>
+</plist>

@@ -1,0 +1,67 @@
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+        
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<!-- This page differs from the basicPageTemplate in that it gives step-by-step
+        instructions on how to complete a given task. These are great for the users,
+        especially if the steps are presented in a bite-sized fashion. Try to use
+        these more than the basic template. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Reliable conditions for AppleScript service scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="AppleScript, osa, conditions" />
+<meta name="description" content="The conditions an AppleScript service script run under" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionwritingscripts"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Reliable conditions for AppleScript service scripts</h1>
+</div>
+<!-- markdown begin -->
+<p>ThisService executes AppleScript service scripts under a number of special conditions that the service may choose to rely on.</p>
+<div summary="Reliable conditions for AppleScript service scripts" id="taskbox">
+<p><strong>Reliable conditions for AppleScript service scripts:</strong></p>
+<ul>
+<li>ThisService passes service input as Unicode text and expects service output passed to it (via return) as Unicode text.</li>
+<li>ThisService calls the handler <code>process</code> with either one argument (the service input) or no arguments (if the service only produces output), and the handler must return the service results if the service is a filter or produces output. The handler is called directly by ThisService, and no surrounding code (like such code that may be called inside Script Editor when you run the script) is executed beforehand.</li>
+<li>
+<p>ThisService is also able to pass surrounding context information to the script. It does this by attempting to run an alternative handler, <code>tsprocess</code>, if it is present. <code>tsprocess</code> takes one more argument (at the end of the list) than <code>process</code> would take, but otherwise behaves identically.</p>
+<p>This extra argument is an options record, containing the context information. Due to the construction of AppleScript's records, a full descriptive name can't be used or in any way aliased without the use of a scripting dictionary (which would need to be redistributed and properly installed along with the service), so the keys used to look up the corresponding entry value are 'raw' four character constants.</p>
+<p>All record entry values are strings. These record entries are defined:</p>
+<dl>
+<dt><code>«class TSsv»</code> (Service Skeleton Version)</dt>
+<dd>This value is set to <code>2</code> for services created using this version of ThisService, and is intended to be used for versioning behavior when being created under different ThisService revisions. (Services created in ThisService 2.0.* or 1.* aren't called through <code>tsprocess</code> to begin with.) This variable is consistent with the value of the key <code>ThisServiceServiceVersion</code> in the service's Info.plist file.</dd>
+<dt><code>«class TSop»</code> (Service OS Platform)</dt>
+<dd>This value is always set to <code>Mac OS X</code>.</dd>
+<dt><code>«class TSov»</code> (Service OS Version Major+Minor) and <code>«class TSoV»</code> (Service OS Version Full)</dt>
+<dd>These values will be set to the current Mac OS X version in two forms; Major+Minor contains the broad release version, like <code>10.7</code>, while Full contains the full version, like <code>10.7.4</code>. If for any reason the version can not be determinated for one or both variables, they will contain <code>?</code>. Alternative implementors of ThisService-like utilities on other platforms may set these variables to appropriate values.</dd>
+<dt><code>«class TSiM»</code> (Service Implementor)</dt>
+<dd>This value is always set to <code>ThisService</code>.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="writingscripts-applescript.html">Writing an AppleScript service script</a><br />
+<a href="help:topic_list=sectionwritingscripts%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Writing%20scripts%20Topics">Writing scripts Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Writing scripts"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

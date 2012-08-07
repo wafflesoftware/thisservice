@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>QuartzGLEnable</key>
+	<true/>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0.1</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>pl</string>
+				<string>rb</string>
+				<string>py</string>
+				<string>pyc</string>
+				<string>pm</string>
+				<string>js</string>
+				<string>sh</string>
+				<string>command</string>
+				<string>csh</string>
+				<string>rbw</string>
+				<string>php</string>
+				<string>php3</string>
+				<string>php4</string>
+				<string>ph3</string>
+				<string>ph4</string>
+				<string>applescript</string>
+				<string>scpt</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>ThisService script source</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>osas</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>None</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>ThisService Help.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>net.wafflesoftware.ThisService.help</string>
+	<key>CFBundleIconFile</key>
+	<string>hidpiicon</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.wafflesoftware.ThisService</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>3.0.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://wafflesoftware.net/thisservice/sparkle/sparkle.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+</dict>
+</plist>

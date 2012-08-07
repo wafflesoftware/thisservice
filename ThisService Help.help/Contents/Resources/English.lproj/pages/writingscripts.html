@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This Apple Help template put together by Andy Matuschak
+        http://www.andymatuschak.org
+        andy@andymatuschak.org
+        Version 1.0
+
+        Adapted from the Safari help book - thanks, Apple!
+        Adapted more directly from Pixen's help book.
+        Licensed under MIT. -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.10), see www.w3.org" />
+<title>Writing service scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Writing, service script, starting point" />
+<meta name="description" content="Getting started writing a service script" />
+<link media="all" rel="stylesheet" href="../css/topicPage.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+<div id="machelp"><a name="sectionwritingscripts" id="sectionwritingscripts"></a> <!-- Specify a category in the anchor above; then you can
+                                        link to listings of every topic in a given category. -->
+ <a class="bread" href="help:anchor='access'%20bookID=ThisService%20Help">ThisService Help</a> <!-- The above links back to the index page --></div>
+<div id="index"><a class="leftborder" href="index.html">Index</a></div>
+</div>
+<div id="mainbox">
+<div id="caticon"><img class="icon" id="appicon" src="../gfx/icon.png" alt="ThisService Icon" /></div>
+<div id="pagetitle">
+<h1>Writing service scripts</h1>
+</div>
+<!-- markdown begin -->
+<p>A service script is what makes a service you create with ThisService do what it does. Service scripts can be written in AppleScript or in other languages, and ThisService Help details the conventions ThisService-generated services will use to communicate with your service script.</p>
+<p>If you are planning to share your service with others later on, take care to ensure that you don't rely on external libraries (like Ruby modules not shipping with the standard Mac OS X Ruby installation) and that, if applicable, you can handle the full range of Unicode characters that UTF-8 affords.</p>
+<p>ThisService comes with a few service scripts <em>starting points</em> for AppleScript, Ruby, Perl and Python, containing skeletal scripts to which you can add your own code. For standard service scripts, the starting points scripts supply the lines of codes to read from STDIN and to make sure input and output are known to be in UTF-8.</p>
+<!-- markdown end -->
+<h2 class="seealso">See also</h2>
+<p class="seealso"><a href="writingscripts-standard.html">Writing a standard service script</a><br />
+<a href="writingscripts-applescript.html">Writing an AppleScript service script</a><br />
+<a href="writingscripts-specialbehavior-standard.html">Reliable conditions for standard service scripts</a><br />
+<a href="writingscripts-specialbehavior-applescript.html">Reliable conditions for AppleScript service scripts</a><br />
+<a href="help:topic_list=sectionwritingscripts%20bookID=net.wafflesoftware.ThisService.help%20template=css/genlist.html%20stylesheet=css/genlist_style.css%20Other=Writing%20scripts%20Topics">Writing scripts Topics</a> <!-- The above tag links to an auto-generated list of pages
+                                                in the specified category ("Writing scripts"). Categories
+                                                are signified by an anchor tag (see earlier in this
+                                                page). --></p>
+</div>
+</body>
+</html>

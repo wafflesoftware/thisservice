@@ -1,0 +1,361 @@
+//
+//  TSPackUpViewController.m
+//  ThisService
+//
+//  Created by Jesper on 2007-04-22.
+//  Copyright 2007-2012 waffle software. All rights reserved.
+//  BSD licensed - see license.txt for more information.
+//
+
+#import "TSPackUpViewController.h"
+#import "TSCreateServiceViewController.h"
+#import "TSModeMatrix.h"
+#import "WFFilePicker.h"
+#import "TSZip.h"
+
+#import "NSWorkspace+SmallIcon.h"
+
+#define	TSPackUpSavePathKey	@"TSPackUpSavePath"
+
+
+#define TSInstructionsSupplied	0
+#define TSInstructionsGenerated	1
+#define TSInstructionsSkipped	2
+
+@interface TSPackUpEntry : NSObject {
+    NSString *_pathToService;
+    NSString *_serviceLabel;
+}
+@property (retain) NSString *pathToService;
+@property (retain) NSString *serviceLabel;
+@end
+
+@implementation TSPackUpEntry
+@synthesize pathToService=_pathToService;
+@synthesize serviceLabel=_serviceLabel;
+@end
+
+@implementation TSPackUpViewController
+
+- (void)awakeFromNib {
+    
+    operationQueue = [[NSOperationQueue alloc] init];
+	
+	[instructionsChoice bind:@"filePath" toObject:self withKeyPath:@"instructionsFilePath" options:[NSDictionary dictionary]];
+	[instructionsChoice setAllowedFileTypes:[NSArray arrayWithObjects:@"rtfd", @"rtf", @"html", @"txt", @"text", @"pdf", nil]];
+	
+	[instructionsChoice setDelegate:self];
+}
+
+NSString *ReallyURLEncode(NSString *str) {
+    // -stringByAddingPercentEscapesUsingEncoding: doesn't encode characters like + or / but leaves them be.
+    return [(NSString *)CFURLCreateStringByAddingPercentEscapes(
+                                                                NULL, (CFStringRef)str, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8) autorelease];
+}
+
+- (IBAction)showInstructionTemplate:(id)sender {
+    NSString *serviceName = self.rename;
+    NSString *serviceNameEncoded = ReallyURLEncode(serviceName);
+    
+    NSString *serviceFileName = [[TSService cleanseName:serviceName] stringByAppendingPathExtension:@"service"];
+    NSString *serviceFileNameEncoded = ReallyURLEncode(serviceFileName);
+    
+    [[NSWorkspace sharedWorkspace]
+     openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://wafflesoftware.net/thisservice/service-instructions/?name=%@&filename=%@",serviceNameEncoded, serviceFileNameEncoded]]];
+}
+
+- (NSOpenPanel *)filePicker:(WFFilePicker *)aFilePicker willShowOpenPanel:(NSOpenPanel *)openPanel {
+	[openPanel setMessage:NSLocalizedString(@"RTF files, HTML files, plain text files and PDF files are allowed.", @"Message in Instructions file picker in Pack Up panel")];
+	
+	return openPanel;
+}
+
+- (void)setInstructionsFilePath:(NSString *)path {
+	[self willChangeValueForKey:@"instructionsGiven"];
+	[self didChangeValueForKey:@"instructionsGiven"];
+}
+
+- (NSString *)instructionsFilePath {
+	return [instructionsChoice filePath];
+}
+
+- (BOOL)instructionsGiven {
+	return (!([instructionsChoice isEmpty]));
+}
+
+- (void)startConstructingServicesMenuInTheBackground {
+    [loadingIndicator startAnimation:nil];
+    NSOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(constructServicesMenuInTheBackground) object:nil];
+    [operationQueue addOperation:[op autorelease]];
+}
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    [self startConstructingServicesMenuInTheBackground];
+}
+
+- (void)resetServicesMenu:(NSArray *)mx {
+    NSArray *m = [mx objectAtIndex:0];
+    NSMenuItem *toReselect = nil;
+    if ([mx count] == 2) {
+        toReselect = [mx lastObject];
+    }
+    [serviceChoice removeAllItems];
+	NSMenu *menu = [serviceChoice menu];
+    for (NSMenuItem *mi in m) {
+        [menu addItem:mi];
+    }
+    [loadingIndicator stopAnimation:nil];
+    [loadingIndicator setHidden:YES];
+    [loadingLabel setHidden:YES];
+    [serviceChoice setHidden:NO];
+    
+	if (hasConstructedMenuBefore) {
+//		NSLog(@"hasConstructedMenuBefore; select item %@", toReselect);
+		[serviceChoice selectItem:toReselect];
+        if (toReselect == nil && [serviceChoice numberOfItems] > 0) {
+            toReselect = [serviceChoice itemAtIndex:0];
+            [serviceChoice selectItem:toReselect];
+            [self setRename:[serviceChoice titleOfSelectedItem]];
+        }
+	} else {
+        if ([serviceChoice numberOfItems] > 0) {
+        toReselect = [serviceChoice itemAtIndex:0];
+        [serviceChoice selectItem:toReselect];
+//		NSLog(@"setRename: %@;%@", serviceChoice, [serviceChoice titleOfSelectedItem]);
+		[self setRename:[serviceChoice titleOfSelectedItem]];
+        }
+	}
+    
+    if ([serviceChoice numberOfItems] > 0) {
+        [hasServicesView setHidden:NO];
+        [noServicesView setHidden:YES];
+    } else {
+        [hasServicesView setHidden:YES];
+        [noServicesView setHidden:NO];
+        NSString *pathJoiner = NSLocalizedString(@" -> ", @"Arrow joining path components");
+        onlySearchesInLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"ThisService can only pack up services generated by ThisService 1.0 and 2.0 that are located in %@%@Services.", @"Informative text for 'there are no service to pack up' sheet"), [[[NSFileManager defaultManager] componentsToDisplayForPath:[@"~/Library" stringByExpandingTildeInPath]] componentsJoinedByString:pathJoiner], pathJoiner];
+    }
+    
+	hasConstructedMenuBefore = YES;
+}
+
+- (void)constructServicesMenuInTheBackground {
+    NSDictionary *services = [TSService allServicesInUserBoundary];
+//    NSLog(@"services: %@", services);
+    
+    SEL availableCompareSelector = @selector(localizedCaseInsensitiveCompare:);
+    SEL maybeAvailableCompareSelector = @selector(localizedStandardCompare:);
+    if ([NSString instancesRespondToSelector:maybeAvailableCompareSelector]) {
+        availableCompareSelector = maybeAvailableCompareSelector;
+    }
+    
+    NSArray *serviceNames = [[services allKeys] sortedArrayUsingSelector:availableCompareSelector];
+    
+	TSPackUpEntry *selectedRepresentedObject = nil;
+	NSMenuItem *toReselect = nil;
+	if (hasConstructedMenuBefore) {
+		selectedRepresentedObject = [[serviceChoice selectedItem] representedObject];
+//		NSLog(@"selectedRepresentedObject=%@", selectedRepresentedObject);
+	}
+    NSMutableArray *menuItems = [NSMutableArray array];
+    NSCountedSet *names = [NSCountedSet set];
+    
+    for (NSString *serviceName in serviceNames) {
+        TSService *service = [services objectForKey:serviceName];
+        NSString *serviceMenuLabel = [service serviceName];
+        
+        [names addObject:serviceMenuLabel];
+    }
+    
+    
+    for (NSString *serviceName in serviceNames) {
+        TSService *service = [services objectForKey:serviceName];
+        NSString *pathToService = [service existingServiceURL].path;
+        NSImage *icon = [[NSWorkspace sharedWorkspace] smallIconForFileAtPath:pathToService];
+        
+        NSString *serviceMenuLabel = [service serviceName];
+        TSPackUpEntry *entry = [[[TSPackUpEntry alloc] init] autorelease];
+        entry.serviceLabel = serviceMenuLabel;
+        entry.pathToService = pathToService;
+        
+        NSAttributedString *attributedLabel = nil;
+        
+        if ([names countForObject:serviceMenuLabel] > 1) {
+            NSAttributedString *addition = [[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" — %@", serviceName]
+                                                                           attributes:[NSDictionary dictionaryWithObjectsAndKeys:[[NSColor textColor] colorWithAlphaComponent:0.85], NSForegroundColorAttributeName, [NSFont systemFontOfSize:[NSFont smallSystemFontSize]], NSFontAttributeName, nil]] autorelease];
+            NSMutableAttributedString *attr = [[[[NSAttributedString alloc] initWithString:serviceMenuLabel attributes:[NSDictionary dictionaryWithObject:[NSFont systemFontOfSize:[NSFont systemFontSize]] forKey:NSFontAttributeName]] autorelease] mutableCopy];
+            [attr appendAttributedString:addition];
+            attributedLabel = [attr autorelease];
+        }
+        
+        NSMenuItem *mi = [[NSMenuItem alloc] initWithTitle:serviceMenuLabel action:@selector(changeService:) keyEquivalent:@""];
+        [mi setTarget:self];
+        [mi setImage:icon];
+        [mi setEnabled:YES];
+        if (attributedLabel) {
+            [mi setAttributedTitle:attributedLabel];
+        }
+//        NSLog(@"mi: %@", mi);
+        [mi setRepresentedObject:entry];
+//        NSLog(@"set represented object: %@", mi);
+        if (hasConstructedMenuBefore && [entry.pathToService isEqualToString:selectedRepresentedObject.pathToService]) {
+  //          NSLog(@"hasConstructedMenuBefore; represented object is equal: %@", mi);
+            toReselect = mi;
+        }
+        [menuItems addObject:mi];
+        [mi release];
+        //[m addItem:[mi autorelease]];
+    }
+    
+    [self performSelectorOnMainThread:@selector(resetServicesMenu:) withObject:[NSArray arrayWithObjects:menuItems, toReselect, nil] waitUntilDone:NO];
+}
+
+- (void)setRenaming:(BOOL)ren {
+	isRenaming = ren;
+	if (isRenaming == NO && [_rename stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]])
+		[self setRename:[serviceChoice titleOfSelectedItem]];
+}
+
+- (BOOL)renaming {
+	return isRenaming;
+}
+
+- (void)setRename:(NSString *)newRename {
+	if (newRename == _rename) return;
+	[_rename release];
+	_rename = [newRename retain];
+}
+
+- (NSString *)rename {
+	return _rename;
+}
+
+- (IBAction)changeService:(id)sender {
+	NSMenuItem *mi = (NSMenuItem *)sender;
+    TSPackUpEntry *entry = [mi representedObject];
+	[self setRename:entry.serviceLabel];
+}
+
+#define TSPackUpSave	@"TSPackUpSave"
+
+- (IBAction)doPackUp:(id)sender {
+	NSString *sname = [self rename];
+	NSString *cl = [TSService cleanseName:sname];
+	
+	NSSavePanel *sp = [NSSavePanel savePanel];
+	[sp setRequiredFileType:@"zip"];
+	NSString *savePath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:TSPackUpSavePathKey];
+	[sp beginSheetForDirectory:(savePath != nil ? savePath : NSHomeDirectory()) file:[NSString stringWithFormat:@"%@.zip", cl] modalForWindow:[[self view] window] modalDelegate:self didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:) contextInfo:TSPackUpSave];
+}
+
+- (void)packUp:(NSURL *)path {
+    
+    if (YES/* new way */) {
+        
+        TSPackUpEntry *entry = [[serviceChoice selectedItem] representedObject];
+        NSString *pathToService = entry.pathToService;
+        if (pathToService) {
+            NSURL *urlToService = [NSURL fileURLWithPath:pathToService];
+            
+            
+            NSString *newName = self.rename;
+            
+            TSService *service = [TSService serviceAtURL:urlToService];
+            if (!service) {
+                NSAlert *alert = [NSAlert
+                                  alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"The service %@ could not be packed up because it has been moved or deleted.", @"Brief message shown when the service could not be packed up."), newName]
+                                  defaultButton:NSLocalizedString(@"OK", @"OK button for 'service could not be packed up' sheet")
+                                  alternateButton:nil
+                                  otherButton:nil
+                                  informativeTextWithFormat:nil];
+                [alert beginSheetModalForWindow:[[self view] window]
+                                  modalDelegate:self
+                                 didEndSelector:@selector(packedUpServiceAlertDidEnd:returnCode:contextInfo:)
+                                    contextInfo:path];
+                return;
+            }
+            [service renameService:newName];
+            
+            NSFileWrapper *fw = [service upgradedServiceFileWrapper];
+            
+            NSString *serviceFileName = [service serviceFileName];
+            
+            NSMutableDictionary *md = [NSMutableDictionary dictionaryWithObject:fw forKey:serviceFileName];
+            
+            if ([self instructionsGiven]) {
+                NSFileWrapper *readMe = [[NSFileWrapper alloc] initWithPath:[instructionsChoice filePath]];
+                [md setObject:readMe forKey:[[instructionsChoice filePath] lastPathComponent]];
+                [readMe release];
+            }
+            
+            NSFileWrapper *rootDir = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:md];
+            
+            NSData *foo = [[TSZip zip:rootDir] retain];
+            
+            [rootDir release];
+            
+            [foo writeToURL:path atomically:YES];
+            [foo release];
+            [path retain];
+            
+            NSAlert *alert = [NSAlert
+                              alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"The service %@ has been packed up.", @"Brief message shown when the service has been packed up."), newName]
+                              defaultButton:NSLocalizedString(@"OK", @"OK button for 'service has been packed up' sheet")
+                              alternateButton:nil
+                              otherButton:NSLocalizedString(@"Reveal in Finder", @"Reveal in Finder button for 'service has been packed up' sheet")
+                              informativeTextWithFormat:NSLocalizedString(@"The service was packed up into a zip archive at:\n%@", @"Informative text for 'service has been packed up' sheet"), [[[NSFileManager defaultManager] componentsToDisplayForPath:[path path]] componentsJoinedByString:NSLocalizedString(@" -> ", @"Arrow joining path components")]];
+            [alert beginSheetModalForWindow:[[self view] window]
+                              modalDelegate:self
+                             didEndSelector:@selector(packedUpServiceAlertDidEnd:returnCode:contextInfo:)
+                                contextInfo:path];
+            
+        }
+    }
+}
+
+- (void)packedUpServiceAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
+	NSURL *urlPath = (NSURL *)contextInfo;
+//	NSLog(@"urlPath: %@", urlPath);
+	if (returnCode == NSAlertOtherReturn) {
+		[[NSWorkspace sharedWorkspace] selectFile:[urlPath path] inFileViewerRootedAtPath:[[urlPath path] stringByDeletingLastPathComponent]];
+	}
+	[[alert window] orderOut:self];
+}
+
+- (void)noServicesAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
+	[[alert window] orderOut:self];
+}
+
+- (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo {
+	NSString *ctx = (NSString *)contextInfo;
+	if ([ctx isEqualToString:TSPackUpSave]) {
+		if (returnCode == NSOKButton) {
+			NSUserDefaultsController *udc = [NSUserDefaultsController sharedUserDefaultsController];
+			[[udc values] setValue:[sheet directory] forKey:TSPackUpSavePathKey];
+			[udc save:nil];
+			[sheet orderOut:self];
+			[self packUp:[sheet URL]];
+			return;
+		}
+	}
+	[sheet orderOut:self];
+}
+
+- (IBAction)showPackUp:(id)sender {
+	[[[self view] window] makeKeyAndOrderFront:nil];
+	[modeMatrix goToTag:1];
+}
+
+- (IBAction)help:(id)sender {
+	[[NSHelpManager sharedHelpManager] openHelpAnchor:@"packuphelp" inBook:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleHelpBookName"]];
+}
+
+- (void)dealloc {
+    [constructServicesMenuOperation release];
+    [operationQueue release];
+    [_rename release];
+    [super dealloc];
+}
+
+@end
